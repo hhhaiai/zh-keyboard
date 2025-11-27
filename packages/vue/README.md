@@ -48,6 +48,7 @@ pnpm add @zh-keyboard/vue
 <script setup>
 import { ZhKeyboard } from '@zh-keyboard/vue'
 import { ref } from 'vue'
+import '@zh-keyboard/vue/style.css'
 
 const inputText = ref('')
 </script>

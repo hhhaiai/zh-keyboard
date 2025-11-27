@@ -49,7 +49,7 @@ pnpm add @zh-keyboard/react
 ```tsx
 import { ZhKeyboard } from '@zh-keyboard/react'
 import { useState } from 'react'
-import '@zh-keyboard/react/dist/style.css'
+import '@zh-keyboard/react/style.css'
 
 function App() {
   const [inputText, setInputText] = useState('')
