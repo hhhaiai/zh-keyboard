@@ -32,6 +32,7 @@ pnpm add @zh-keyboard/react
 | defaultMode     | 'en' \| 'zh' \| 'hand' \| 'num'  | 'en'     | 默认的键盘模式                      |
 | enableHandwriting| boolean                          | false    | 是否启用手写输入                    |
 | position        | 'static' \| 'float' \| 'bottom'  | 'static' | 键盘定位模式                       |
+| numKeys         | string[][]                   | -        | 数字键盘的行配置                    |
 | value           | string                            | ''       | 输入框的值                         |
 | onChange        | function                          | -        | 值变化时的回调函数                 |
 

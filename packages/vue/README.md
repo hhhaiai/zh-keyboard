@@ -32,6 +32,7 @@ pnpm add @zh-keyboard/vue
 | defaultMode     | 'en' \| 'zh' \| 'hand' \| 'num'  | 'en'     | 默认的键盘模式                      |
 | enableHandwriting| boolean                          | false    | 是否启用手写输入                    |
 | position        | 'static' \| 'float' \| 'bottom'  | 'static' | 键盘定位模式                       |
+| numKeys         | string[][]                   | -        | 数字键盘的行配置                    |
 
 ### 事件
 

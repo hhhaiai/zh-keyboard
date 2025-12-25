@@ -8,16 +8,21 @@ import '../styles/NumericKeyboard.scss'
 interface NumericKeyboardProps {
   onKey: (payload: KeyEvent) => void
   onExit: () => void
+  keyboardRows?: string[][]
 }
 
-const NumericKeyboard: React.FC<NumericKeyboardProps> = ({ onKey, onExit }) => {
-  const keyboardRows = [
-    ['1', '2', '3'],
-    ['4', '5', '6'],
-    ['7', '8', '9'],
-    ['back', '0', 'space'],
-  ]
+const DEFAULT_KEYBOARD_ROWS = [
+  ['1', '2', '3'],
+  ['4', '5', '6'],
+  ['7', '8', '9'],
+  ['back', '0', 'space'],
+]
 
+const NumericKeyboard: React.FC<NumericKeyboardProps> = ({
+  onKey,
+  onExit,
+  keyboardRows = DEFAULT_KEYBOARD_ROWS,
+}) => {
   const functionKeys = [
     { key: 'delete', icon: keyboardBackspace, text: '', alt: 'Delete' },
     { key: '.', icon: '', text: '.', alt: '.' },

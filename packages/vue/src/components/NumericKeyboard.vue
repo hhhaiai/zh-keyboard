@@ -4,17 +4,21 @@ import backspaceIcon from '../assets/icons/keyboard-backspace.svg'
 import returnIcon from '../assets/icons/keyboard-return.svg'
 import '../styles/NumericKeyboard.scss'
 
+withDefaults(defineProps<{
+  keyboardRows?: string[][]
+}>(), {
+  keyboardRows: () => [
+    ['1', '2', '3'],
+    ['4', '5', '6'],
+    ['7', '8', '9'],
+    ['back', '0', 'space'],
+  ],
+})
+
 const emit = defineEmits<{
   (e: 'key', payload: KeyEvent): void
   (e: 'exit'): void
 }>()
-
-const keyboardRows = [
-  ['1', '2', '3'],
-  ['4', '5', '6'],
-  ['7', '8', '9'],
-  ['back', '0', 'space'],
-]
 
 const functionKeys = [
   { key: 'delete', icon: backspaceIcon, text: '', alt: 'Delete' },

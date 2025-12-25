@@ -20,6 +20,7 @@ interface ZhKeyboardProps {
   onKey?: (payload: KeyEvent) => void
   className?: string
   style?: React.CSSProperties
+  numKeys?: string[][]
 }
 
 const ZHKeyboardContent: React.FC<ZhKeyboardProps> = ({
@@ -30,6 +31,7 @@ const ZHKeyboardContent: React.FC<ZhKeyboardProps> = ({
   onKey,
   className,
   style,
+  numKeys,
 }) => {
   const [mode, setMode] = useState<KeyBoardMode>(defaultMode)
   const previousModeRef = useRef<KeyBoardMode>(defaultMode)
@@ -173,7 +175,13 @@ const ZHKeyboardContent: React.FC<ZhKeyboardProps> = ({
                   onExit={goBack}
                 />
               )}
-              {mode === 'num' && <NumericKeyboard onKey={handleKeyEvent} onExit={goBack} />}
+              {mode === 'num' && (
+                <NumericKeyboard
+                  onKey={handleKeyEvent}
+                  onExit={goBack}
+                  keyboardRows={numKeys}
+                />
+              )}
               {mode === 'symbol' && <SymbolKeyboard onKey={handleKeyEvent} onExit={goBack} />}
               {(mode === 'en' || mode === 'zh') && (
                 <KeyboardBase

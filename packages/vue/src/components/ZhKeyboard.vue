@@ -30,6 +30,10 @@ const props = withDefaults(defineProps<{
    * @default true
    */
   disableWhenNoFocus?: boolean
+  /**
+   * 数字键盘的行配置
+   */
+  numKeys?: string[][]
 }>(), {
   defaultMode: 'en',
   enableHandwriting: false,
@@ -192,6 +196,7 @@ function handleRecognize(results: string[]) {
         />
         <NumericKeyboard
           v-else-if="mode === 'num'"
+          :keyboard-rows="numKeys"
           @key="handleKeyEvent"
           @exit="goBack"
         />

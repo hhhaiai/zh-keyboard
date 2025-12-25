@@ -22,6 +22,13 @@ onMounted(() => {
     position.value = 'bottom'
   }
 })
+
+const numKeys = ref<string[][]>([
+  ['1', '2', '3'],
+  ['4', '5', '6'],
+  ['7', '8', '9'],
+  ['back', '0', 'X'],
+])
 </script>
 
 <template>
@@ -99,7 +106,12 @@ onMounted(() => {
     </div>
 
     <div class="keyboard-wrapper">
-      <ZhKeyboard :position="position" :style="position === 'bottom' ? { width: '100%', height: 'auto' } : { width: `${keyboardWidth}px`, height: `${keyboardHeight}px` }" enable-handwriting :disable-when-no-focus="disableWhenNoFocus" />
+      <ZhKeyboard
+        :position="position" :style="position === 'bottom' ? { width: '100%', height: 'auto' } : { width: `${keyboardWidth}px`, height: `${keyboardHeight}px` }"
+        enable-handwriting
+        :disable-when-no-focus
+        :num-keys
+      />
     </div>
   </div>
 </template>
